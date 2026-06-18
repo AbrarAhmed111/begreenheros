@@ -9,7 +9,7 @@ const introHeadingClass =
   "mb-3 text-center text-[22px] font-bold leading-tight text-black sm:text-left sm:text-[24px] md:text-[38px]";
 
 const introBodyClass =
-  "text-center text-[15px] font-normal leading-relaxed text-muted sm:text-left sm:text-[16px]";
+  "text-center text-[15px] font-normal leading-relaxed text-muted sm:text-left sm:text-[16px] hgeas";
 
 export default function Welcome() {
   return (
