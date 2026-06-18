@@ -1,7 +1,8 @@
 import { lazy, Suspense } from "react";
 import type { ReactNode } from "react";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import GuestLayout from "./components/layout/GuestLayout";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Welcome = lazy(() => import("./pages/Welcome"));
 const Home = lazy(() => import("./pages/Home"));
@@ -40,11 +41,23 @@ function loading(element: ReactNode) {
   return <Suspense fallback={<div className="flex min-h-screen items-center justify-center text-2xl font-bold text-dull-green">Loading…</div>}>{element}</Suspense>;
 }
 
+function RootLayout() {
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
+}
+
 const router = createBrowserRouter([
-  { path: "/", element: loading(<Welcome />) },
   {
-    element: <GuestLayout />,
+    element: <RootLayout />,
     children: [
+      { path: "/", element: loading(<Welcome />) },
+      {
+        element: <GuestLayout />,
+        children: [
       { path: "/home", element: loading(<Home />) },
       { path: "/creed", element: loading(<Creed />) },
       { path: "/learn", element: loading(<Learn />) },
@@ -76,9 +89,11 @@ const router = createBrowserRouter([
       { path: "/asset-muc", element: loading(<AssetMuc />) },
       { path: "/asset-puc", element: loading(<AssetPuc />) },
       { path: "/asset-vuc", element: loading(<AssetVuc />) },
+        ],
+      },
+      { path: "*", element: <Navigate to="/" replace /> },
     ],
   },
-  { path: "*", element: <Navigate to="/" replace /> },
 ]);
 
 export default router;

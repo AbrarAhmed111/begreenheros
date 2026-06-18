@@ -1,6 +1,5 @@
 import { FaDoorOpen } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const introCardClass =
   "flex w-full max-w-[500px] flex-col items-center justify-start rounded-[20px] bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.08)] sm:items-start sm:rounded-[24px] sm:p-8 md:p-14";
@@ -16,13 +15,13 @@ export default function Welcome() {
     <div className="min-h-screen text-base leading-relaxed text-body md:text-lg">
       <header className="bg-dull-green px-3.5 py-2.5 text-white sm:px-7 sm:py-4">
         <nav className="flex items-center justify-between gap-2.5" aria-label="Welcome navigation">
-          <Link
-            to="/home"
+          <button
+            type="button"
             className="flex shrink-0 items-center gap-2 text-[25px] font-semibold text-white sm:text-[28px] md:text-[30px]"
           >
             <AiFillHome aria-hidden="true" />
             <span>Home</span>
-          </Link>
+          </button>
 
           <p className="hidden flex-1 text-center text-lg font-bold leading-snug sm:text-2xl md:block md:text-[34px]">
             Knowledge is the renewable energy Green Heroes create.
@@ -70,13 +69,13 @@ export default function Welcome() {
             </article>
           </div>
 
-          <Link
-            to="/home"
-            className="inline-flex w-full items-center justify-center gap-2.5 rounded-pill bg-gradient-green px-8 py-3.5 text-[25px] font-bold text-white shadow-[0_10px_15px_-3px_rgba(39,174,96,0.3)] transition-all duration-300 hover:-translate-y-[3px] hover:text-black sm:w-auto sm:px-10 sm:py-4 sm:text-[28px] md:px-12 md:text-[30px]"
+          <button
+            type="button"
+            className="inline-flex w-full items-center justify-center gap-2.5 rounded-pill bg-gradient-green px-8 py-3.5 text-[25px] font-bold text-white shadow-[0_10px_15px_-3px_rgba(39,174,96,0.3)] sm:w-auto sm:px-10 sm:py-4 sm:text-[28px] md:px-12 md:text-[30px]"
           >
             <FaDoorOpen aria-hidden="true" />
             Enter
-          </Link>
+          </button>
         </section>
       </main>
     </div>
