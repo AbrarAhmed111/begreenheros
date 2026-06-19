@@ -19,6 +19,10 @@ const pageTitles: Record<string, string> = {
   "/subscription": "Learn and Earn",
   "/individual": "Learn and Earn",
   "/institutional": "Learn and Earn",
+  "/my-rewards": "Learn and Earn",
+  "/vote": "Learn and Earn",
+  "/propose": "Learn and Earn",
+  "/faq": "Learn and Earn",
   "/under-construction": "Learn and Earn",
 };
 

@@ -51,12 +51,22 @@ export default {
           "0%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
+        gearSpinCw: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        gearSpinCcw: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(-360deg)" },
+        },
       },
       animation: {
         "modal-float": "modalFloat 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "modal-backdrop": "modalBackdrop 0.3s ease-out forwards",
         "modal-float-out": "modalFloatOut 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "modal-backdrop-out": "modalBackdropOut 0.3s ease-in forwards",
+        "gear-spin-cw": "gearSpinCw 4s linear infinite",
+        "gear-spin-ccw": "gearSpinCcw 4s linear infinite",
       },
     },
   },
