@@ -7,12 +7,127 @@ export const missions: Mission[] = [
     image: "/img/combat-logo.jpeg",
     intro: "Building Sustainability on Facts, Not Myths",
     steps: [
-      { title: "Why This Mission Exists", body: "Environmental sustainability is one of the most discussed global topics, and also one of the most misunderstood. BE GREEN HEROES exists to correct this problem at its root: knowledge." },
-      { title: "What We Mean by Misinformation", body: "Misinformation often grows from oversimplified claims, missing context, outdated assumptions, and greenwashing. BGH treats it as a systemic issue, not a personal failure." },
-      { title: "Science Before Action", body: "Every learning pathway is grounded in evidence, transparent sources, lifecycle thinking, and the willingness to question popular narratives." },
-      { title: "From Learning to Impact", body: "Verified learning becomes the basis for contribution and participation, so influence reflects credibility and comprehension rather than popularity or capital." },
-      { title: "Why This Matters", body: "Clear scientific understanding enables better choices, more accountable institutions, and environmental action that creates measurable value." },
-      { title: "Ready to Begin the Journey?", body: "Every Green Hero starts with a single step." },
+      {
+        title: "Why This Mission Exists",
+        sections: [
+          {
+            text: "Environmental sustainability is one of the most discussed global topics, and also one of the most misunderstood.",
+          },
+          { text: "Public conversations are often shaped by:" },
+          {
+            bullets: [
+              "Oversimplified narratives",
+              "Emotional or moral pressure",
+              "Repeated claims that lack scientific validation",
+            ],
+          },
+          {
+            text: "These distortions lead to **ineffective actions**, misplaced trust, and policies that fail to deliver real environmental benefits.",
+          },
+          {
+            text: "**BE GREEN HEROES (BGH) exists to correct this problem at its root: knowledge.**",
+          },
+        ],
+      },
+      {
+        title: 'What We Mean by "Misinformation"',
+        sections: [
+          {
+            text: "Misinformation in sustainability does not always come from bad intentions. It often arises from:",
+          },
+          {
+            bullets: [
+              'Selective use of data (single metrics like "carbon only")',
+              "Misinterpretation of scientific studies",
+              "Marketing claims presented as environmental facts",
+              "Popular beliefs repeated until they feel true",
+            ],
+          },
+          {
+            text: "BGH treats misinformation as a **systemic issue**, not a personal failure.",
+          },
+        ],
+      },
+      {
+        title: "The BGH Approach: Science Before Action",
+        sections: [
+          {
+            text: "BGH combats misinformation by grounding every learning pathway in:",
+          },
+          {
+            bullets: [
+              "**Lifecycle thinking** (materials, production, use, and end-of-life)",
+              "**Evidence-based analysis**, not slogans",
+              '**Contextual understanding**, not binary "good vs bad" labels',
+            ],
+          },
+          { text: "Participants are encouraged to question:" },
+          {
+            bullets: [
+              "What problem is actually being solved?",
+              "What trade-offs exist?",
+              "What evidence supports this claim?",
+            ],
+          },
+          {
+            text: "This approach replaces emotional reactions with **informed judgment.**",
+          },
+        ],
+      },
+      {
+        title: "From Learning to Impact",
+        sections: [
+          {
+            text: "Combatting misinformation is not passive learning. In the BGH ecosystem:",
+          },
+          {
+            bullets: [
+              "Learners **earn Green Hero Coins (GHC)** for verified knowledge engagement",
+              "Participation is tied to **understanding**, not opinions",
+              "Governance rights are **earned, not bought**",
+            ],
+          },
+          {
+            text: "This ensures that influence within BGH reflects **credibility and comprehension**, not popularity or capital.",
+          },
+        ],
+      },
+      {
+        title: "Why This Matters",
+        sections: [
+          { text: "When misinformation dominates:" },
+          {
+            bullets: [
+              "Well-intentioned actions can cause unintended harm",
+              "Resources are misallocated",
+              "Trust in sustainability collapses",
+            ],
+          },
+          {
+            text: "By restoring clarity and scientific discipline, BGH helps build:",
+          },
+          {
+            bullets: [
+              "More effective environmental action",
+              "More resilient governance",
+              "A sustainability ecosystem that can scale globally",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Ready to Begin the Journey?",
+        sections: [
+          { text: "Every Green Hero starts with a single step." },
+          {
+            bullets: [
+              "**Start learning**",
+              "**Engage responsibly**",
+              "**Contribute meaningfully**",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -21,13 +136,126 @@ export const missions: Mission[] = [
     image: "/img/G-logo.jpeg",
     intro: "Learning That Creates Real Value",
     steps: [
-      { title: "What Are Green Hero Coins?", body: "Green Hero Coins are utility-based participation tokens within the BGH ecosystem. They are earned through verified learning and meaningful engagement." },
-      { title: "How You Earn", body: "Complete structured learning activities that demonstrate effort, understanding, and integrity." },
-      { title: "Why Learning Is the Reward Mechanism", body: "BGH rewards understanding rather than spending, speculation, visibility, or popularity." },
-      { title: "What They Represent", body: "Green Hero Coins reflect verified contribution, ecosystem participation, and progress through BGH learning pathways." },
-      { title: "Who Can Earn?", body: "BGH is built for global inclusion and removes barriers so learning can come first." },
-      { title: "From Learning to Participation", body: "As participation grows, learners may contribute ideas, join structured decisions, and support the ecosystem." },
-      { title: "Ready to Begin the Journey?", body: "Every Green Hero starts with a single step." },
+      {
+        title: "What Are Green Hero Coins?",
+        sections: [
+          {
+            text: "Green Hero Coins (GHC) are **utility-based participation tokens** within the BE GREEN HEROES (BGH) ecosystem.",
+          },
+          {
+            text: "They are **not rewards for spending**, speculation, or popularity. They are earned through **verified learning and meaningful engagement** with science-based sustainability content.",
+          },
+          {
+            text: "In BGH, **knowledge is the entry point to value**",
+          },
+        ],
+      },
+      {
+        title: "How You Earn Green Hero Coins",
+        sections: [
+          {
+            text: "Participants earn GHC by completing structured learning activities that demonstrate:",
+          },
+          {
+            bullets: [
+              "Understanding of environmental systems",
+              "Ability to evaluate sustainability claims critically",
+              "Engagement with evidence-based content",
+            ],
+          },
+          { text: "Examples include:" },
+          {
+            bullets: [
+              "Completing learning modules",
+              "Passing comprehension checks",
+              "Participating in guided knowledge pathways",
+            ],
+          },
+          {
+            text: "Every earning mechanism is designed to reflect **effort, understanding, and integrity.**",
+          },
+        ],
+      },
+      {
+        title: "Why Learning Is the Reward Mechanism",
+        sections: [
+          { text: "Most digital ecosystems reward:" },
+          {
+            bullets: ["Capital", "Speed", "Visibility"],
+          },
+          { text: "BGH rewards something different:" },
+          {
+            bullets: ["**Credibility**", "**Consistency**", "**Comprehension**"],
+          },
+          { text: "By linking tokens to learning, BGH ensures that:" },
+          {
+            bullets: [
+              "Participation grows with understanding",
+              "Influence is earned, not purchased",
+              "The ecosystem remains resilient against hype and misinformation",
+            ],
+          },
+        ],
+      },
+      {
+        title: "What Green Hero Coins Represent",
+        sections: [
+          { text: "Green Hero Coins represent:" },
+          {
+            bullets: [
+              "Verified participation in the BGH learning ecosystem",
+              "A growing base of shared knowledge",
+              "A pathway toward future governance participation",
+            ],
+          },
+          {
+            text: "They are designed to **reflect contribution**, not financial speculation.",
+          },
+        ],
+      },
+      {
+        title: "Who Can Earn Green Hero Coins?",
+        sections: [
+          { text: "BGH is built for global inclusion." },
+          {
+            bullets: [
+              "Learners aged 15+ may participate through safeguarded learning structures",
+              "No prior expertise is required",
+              "No financial commitment is necessary to begin",
+            ],
+          },
+          { text: "BGH removes barriers so learning can come first." },
+        ],
+      },
+      {
+        title: "From Learning to Participation",
+        sections: [
+          {
+            text: "Earning Green Hero Coins is the first step toward deeper involvement in the BGH ecosystem.",
+          },
+          { text: "As participation grows, learners may:" },
+          {
+            bullets: [
+              "Unlock additional learning paths",
+              "Qualify for future participation layers",
+              "Contribute to a global, knowledge-driven sustainability network",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Ready to Begin the Journey?",
+        sections: [
+          { text: "Every Green Hero starts with a single step." },
+          {
+            bullets: [
+              "**Start learning**",
+              "**Engage responsibly**",
+              "**Contribute meaningfully**",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -36,14 +264,144 @@ export const missions: Mission[] = [
     image: "/img/operation-logo.jpeg",
     intro: "Turning Knowledge Into Collective Action",
     steps: [
-      { title: "What Does Operational Decision-Making Mean?", body: "It is structured participation in how the BGH ecosystem evolves—not political voting, financial control, or real-time management." },
-      { title: "Who Can Participate?", body: "Participation is earned through learning progress, verified engagement, and demonstrated understanding." },
-      { title: "What Participants Can Influence", body: "Qualified participants may contribute to learning priorities, program improvements, community initiatives, and defined operational proposals." },
-      { title: "Why BGH Uses Participatory Operations", body: "Informed participation creates an ecosystem that is transparent, accountable, inclusive, and grounded in shared knowledge." },
-      { title: "How It Works", body: "BGH defines the issue, supplies context, opens a guided participation window, and publishes outcomes and rationales." },
-      { title: "What This Is Not", body: "It is not speculative token voting, unchecked control, or an unstructured popularity contest." },
-      { title: "From Learning to Leadership", body: "Learning → Contribution → Participation → Stewardship." },
-      { title: "Ready to Begin the Journey?", body: "Every Green Hero starts with a single step." },
+      {
+        title: 'What Does "Operational Decision-Making" Mean at BGH?',
+        sections: [
+          {
+            text: "Operational decision-making within BE GREEN HEROES (BGH) refers to **structured participation in how the ecosystem evolves.**",
+          },
+          {
+            text: "This is **not political voting**, financial control, or real-time management. It is **guided input** into clearly defined operational areas where informed perspectives improve outcomes.",
+          },
+          {
+            text: "BGH believes that **those who learn should help shape what comes next.**",
+          },
+        ],
+      },
+      {
+        title: "Who Can Participate?",
+        sections: [
+          {
+            text: "Participation is **earned, not automatic**. Eligibility is based on:",
+          },
+          {
+            bullets: [
+              "Verified learning progress",
+              "Consistent engagement with BGH programs",
+              "Demonstrated understanding of ecosystem principles",
+            ],
+          },
+          {
+            text: "This ensures that operational input reflects **knowledge, not noise.**",
+          },
+        ],
+      },
+      {
+        title: "What Participants Can Influence",
+        sections: [
+          {
+            text: "Depending on qualification level, participants may contribute to decisions related to:",
+          },
+          {
+            bullets: [
+              "Program priorities and focus areas",
+              "Educational pathway improvements",
+              "Community guidelines and participation rules",
+              "Operational frameworks for future initiatives",
+            ],
+          },
+          {
+            text: "Each decision scope is **clearly defined**, time-bound, and transparent",
+          },
+        ],
+      },
+      {
+        title: "Why BGH Uses Participatory Operations",
+        sections: [
+          {
+            text: "Most systems centralize decisions or outsource them to speculation. BGH takes a different approach:",
+          },
+          {
+            bullets: [
+              "Decisions are informed by learning",
+              "Participation grows with understanding",
+              "Authority is distributed responsibly",
+            ],
+          },
+          { text: "This creates an ecosystem that is:" },
+          {
+            bullets: [
+              "More resilient",
+              "Less vulnerable to misinformation",
+              "Aligned with long-term sustainability goals",
+            ],
+          },
+        ],
+      },
+      {
+        title: "How Participation Works in Practice",
+        sections: [
+          { text: "Operational participation follows a structured process:" },
+          {
+            text: "**Issue Definition:** BGH clearly defines the topic and scope.",
+          },
+          {
+            text: "**Context & Learning Materials:** Participants receive background information to ensure informed input.",
+          },
+          {
+            text: "**Guided Participation Window:** Input is collected within a defined timeframe.",
+          },
+          {
+            text: "**Outcome Transparency:** Results and rationales are published for accountability. This process prioritizes **clarity, fairness, and traceability.**",
+          },
+        ],
+      },
+      {
+        title: "What This Is Not",
+        sections: [
+          { text: "To avoid confusion, operational participation is **not**:" },
+          {
+            bullets: [
+              "Day-to-day management",
+              "Financial control or investment voting",
+              "Open-ended or unmoderated decision-making",
+            ],
+          },
+          {
+            text: "BGH participation is **purposeful, structured, and mission-aligned.**",
+          },
+        ],
+      },
+      {
+        title: "From Learning to Leadership",
+        sections: [
+          {
+            text: "Operational participation represents a **natural progression** within BGH:",
+          },
+          {
+            text: "**Learning → Contribution → Participation → Stewardship**",
+          },
+          {
+            text: "It allows committed participants to help shape a system built on:",
+          },
+          {
+            bullets: ["Science", "Trust", "Shared responsibility"],
+          },
+        ],
+      },
+      {
+        title: "Ready to Begin the Journey?",
+        sections: [
+          { text: "Every Green Hero starts with a single step." },
+          {
+            bullets: [
+              "**Start learning**",
+              "**Engage responsibly**",
+              "**Contribute meaningfully**",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -52,15 +410,162 @@ export const missions: Mission[] = [
     image: "/img/bgh-logo.jpeg",
     intro: "From Participation to Purpose",
     steps: [
-      { title: "What Does It Mean to Be a Green Hero?", body: "It is a recognized role for people who consistently act with knowledge, integrity, responsibility, and purpose." },
-      { title: "Green Heroes Emerge", body: "BGH does not assign hero status automatically. It emerges through learning, contribution, participation, and conduct." },
-      { title: "What Green Heroes Represent", body: "They are trusted learners, responsible contributors, and stewards of the BGH culture." },
-      { title: "Responsibilities", body: "Green Heroes are expected to uphold scientific integrity, reject misinformation, and help others learn." },
-      { title: "Recognition Without Centralized Authority", body: "Recognition is based on transparent participation history and sustained alignment with the mission." },
-      { title: "Why This Matters", body: "BGH recognizes informed contribution rather than visibility or speculation." },
-      { title: "Becoming a Green Hero", body: "Learning → Earning → Participating → Acting with Purpose." },
-      { title: "A Living Role, Not a Label", body: "Green Hero status evolves with the ecosystem and is maintained through continued responsibility." },
-      { title: "Ready to Begin the Journey?", body: "Every Green Hero starts with a single step." },
+      {
+        title: 'What Does It Mean to "Be Green Heroes"?',
+        sections: [
+          {
+            text: "Being a Green Hero is **not a title**, a status symbol, or a reward label. It represents a **recognized role within the BGH ecosystem** for individuals who consistently act with:",
+          },
+          {
+            bullets: [
+              "Knowledge",
+              "Integrity",
+              "Responsibility",
+              "Long-term commitment to sustainability",
+            ],
+          },
+          {
+            text: "Green Heroes embody the values BGH is designed to protect.",
+          },
+        ],
+      },
+      {
+        title: "Green Heroes Are Not Created — They Emerge",
+        sections: [
+          {
+            text: "BGH does not assign hero status automatically. Green Heroes emerge through:",
+          },
+          {
+            bullets: [
+              "Continuous learning",
+              "Responsible participation",
+              "Constructive contribution to the ecosystem",
+            ],
+          },
+          {
+            text: 'This ensures the term "Green Hero" retains **meaning, credibility, and trust.**',
+          },
+        ],
+      },
+      {
+        title: "What Green Heroes Represent",
+        sections: [
+          { text: "Green Heroes serve as:" },
+          {
+            bullets: [
+              "Ambassadors of accurate information",
+              "Role models for responsible participation",
+              "Contributors to a healthier digital and environmental ecosystem",
+            ],
+          },
+          {
+            text: "Their presence strengthens the **culture** of BGH, not just its mechanics.",
+          },
+        ],
+      },
+      {
+        title: "Responsibilities of Green Heroes",
+        sections: [
+          {
+            text: "With recognition comes responsibility. Green Heroes are expected to:",
+          },
+          {
+            bullets: [
+              "Promote evidence-based understanding",
+              "Act against misinformation",
+              "Support constructive dialogue",
+              "Uphold BGH principles in public and private spaces",
+            ],
+          },
+          {
+            text: "This role is **earned and maintained**, not permanent by default.",
+          },
+        ],
+      },
+      {
+        title: "Recognition Without Centralized Authority",
+        sections: [
+          {
+            text: 'BGH avoids centralized "approval systems" for hero status. Instead, recognition is based on:',
+          },
+          {
+            bullets: [
+              "Transparent criteria",
+              "Observable contribution patterns",
+              "Community-aligned behavior",
+            ],
+          },
+          { text: "This model prevents:" },
+          {
+            bullets: [
+              "Gatekeeping",
+              "Arbitrary promotion",
+              "Reputation inflation",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Why This Matters",
+        sections: [
+          {
+            text: "Many systems reward visibility or speculation. BGH recognizes:",
+          },
+          {
+            bullets: [
+              "Consistency over noise",
+              "Knowledge over hype",
+              "Responsibility over influence",
+            ],
+          },
+          {
+            text: "By doing so, BGH protects its mission while empowering individuals who genuinely contribute.",
+          },
+        ],
+      },
+      {
+        title: "Becoming a Green Hero",
+        sections: [
+          {
+            text: "There is no single action that makes someone a Green Hero. It is the **result of a journey:**",
+          },
+          {
+            text: "**Learning → Earning → Participating → Acting with Purpose**",
+          },
+          { text: "Each step reinforces the next." },
+        ],
+      },
+      {
+        title: "A Living Role, Not a Label",
+        sections: [
+          {
+            text: "Green Hero status evolves as the ecosystem evolves. This ensures:",
+          },
+          {
+            bullets: [
+              "Relevance over time",
+              "Alignment with new challenges",
+              "Continuous growth of the community",
+            ],
+          },
+          {
+            text: "Being a Green Hero means **growing with the mission.**",
+          },
+        ],
+      },
+      {
+        title: "Ready to Begin the Journey?",
+        sections: [
+          { text: "Every Green Hero starts with a single step." },
+          {
+            bullets: [
+              "**Start learning**",
+              "**Engage responsibly**",
+              "**Contribute meaningfully**",
+            ],
+          },
+        ],
+      },
     ],
   },
 ];

@@ -1,6 +1,6 @@
 # Be Green Heroes — React Rebuild
 
-Static React/TypeScript/Tailwind rebuild of the Be Green Heroes public website. The legacy Laravel application in `Be-Green-Heros-main/` is a read-only UI and content reference.
+Static React/TypeScript/Tailwind rebuild of the Be Green Heroes public website.
 
 ## Stack
 
@@ -18,8 +18,8 @@ Static React/TypeScript/Tailwind rebuild of the Be Green Heroes public website. 
 - `src/components/ui/` — shared buttons, quotes, form fields, and detail layouts
 - `src/context/` and `src/hooks/` — local modal/sidebar state
 - `src/types/` — shared TypeScript interfaces
-- `src/utils/` — reusable legacy content models
-- `public/img`, `public/pdf`, `public/video` — legacy public assets
+- `src/utils/` — shared content and page data
+- `public/img`, `public/pdf`, `public/video` — static public assets
 
 ## Commands
 

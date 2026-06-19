@@ -34,6 +34,30 @@ export default {
         card: "0 15px 35px rgba(0, 0, 0, 0.15)",
         modal: "0 20px 60px rgba(0, 0, 0, 0.25)",
       },
+      keyframes: {
+        modalFloat: {
+          "0%": { opacity: "0", transform: "translateY(28px) scale(0.96)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        modalBackdrop: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        modalFloatOut: {
+          "0%": { opacity: "1", transform: "translateY(0) scale(1)" },
+          "100%": { opacity: "0", transform: "translateY(28px) scale(0.96)" },
+        },
+        modalBackdropOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+      },
+      animation: {
+        "modal-float": "modalFloat 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "modal-backdrop": "modalBackdrop 0.3s ease-out forwards",
+        "modal-float-out": "modalFloatOut 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "modal-backdrop-out": "modalBackdropOut 0.3s ease-in forwards",
+      },
     },
   },
   plugins: [],

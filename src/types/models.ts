@@ -31,12 +31,21 @@ export interface QuoteProps {
   children: ReactNode;
 }
 
+export interface MissionStep {
+  title: string;
+  body?: string;
+  sections?: Array<{
+    text?: string;
+    bullets?: string[];
+  }>;
+}
+
 export interface Mission {
   title: string;
   tagline: string;
   image: string;
   intro: string;
-  steps: Array<{ title: string; body: string }>;
+  steps: MissionStep[];
 }
 
 export interface MissionModalProps {
