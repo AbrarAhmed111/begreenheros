@@ -7,7 +7,7 @@ const utilityMarks = [["uc", "uc.jpeg"], ["muc", "muc.jpeg"], ["puc", "puc.jpeg"
 
 export default function BrandAssets() {
   return (
-    <section className="mx-auto max-w-content px-2 py-6 text-center sm:p-8"><Quote>Sustainability requires shared knowledge</Quote><h1 className="my-7 text-[clamp(2rem,4vw,4rem)] font-bold">Brand Assets</h1>
+    <section className="mx-auto max-w-content px-2 py-6 text-center sm:p-8"><Quote>Sustainability requires shared knowledge</Quote><h1 className="my-7 text-[32px] font-bold sm:text-[40px] md:text-[64px]">Brand Assets</h1>
       <div className="mx-auto flex max-w-5xl items-end justify-center px-2 py-7">{heroLinks.map(([name, image]) => <Link key={name} to={`/hero-${name}`} className="flex-1 transition hover:-translate-y-2"><img src={`/img/${image}`} alt={`${name} character`} className="max-h-[360px] w-full object-contain" /></Link>)}</div>
       <Link to="/asset-bgh"><img src="/img/bgh-logo.jpeg" alt="BGH circular emblem" className="mx-auto h-[150px] w-[150px] rounded-full object-cover transition hover:scale-105" /></Link><p className="mt-3 text-sm italic">* For complete usage limitations, refer to BGH Brand Usage Guidelines (BBUS).</p>
       <h2 className="mb-6 mt-12 text-3xl font-bold">Lettermarks</h2><div className="flex flex-wrap items-center justify-center gap-8">{[1, 2, 3].map((number) => <Link key={number} to={`/asset-bgh-${number}`}><img src={`/img/bgh-${number}.png`} alt={`BGH lettermark ${number}`} className="max-h-[180px] max-w-[220px] object-contain transition hover:scale-105" /></Link>)}</div>

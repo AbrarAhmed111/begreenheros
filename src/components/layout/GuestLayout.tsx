@@ -28,7 +28,7 @@ export default function GuestLayout() {
   const pageTitle = pageTitles[pathname] ?? (pathname.startsWith("/hero-") || pathname.startsWith("/asset-") ? "BGH Operations" : "Be Green Heroes");
 
   return (
-    <div className="min-h-screen bg-white text-[clamp(16px,1vw,18px)] leading-[1.7] text-body">
+    <div className="min-h-screen bg-white text-base leading-[1.7] text-body md:text-lg">
       <Header pageTitle={pageTitle} onMenuToggle={sidebar.toggle} />
       <Sidebar isOpen={sidebar.isOpen} onNavigate={sidebar.close} />
       {sidebar.isOpen && <button type="button" className="fixed inset-0 z-20 bg-black/40 lg:hidden" onClick={sidebar.close} aria-label="Close navigation overlay" />}

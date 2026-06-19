@@ -7,7 +7,7 @@ export default function AssetDetailPage({ asset }: AssetDetailPageProps) {
   return (
     <section className="mx-auto max-w-content px-2 py-6 sm:p-8">
       <Quote>Sustainability requires shared knowledge</Quote>
-      <h1 className="my-7 text-center text-[clamp(1.8rem,4vw,3.3rem)] font-bold">Brand Assets</h1>
+      <h1 className="my-7 text-center text-[29px] font-bold sm:text-4xl md:text-[53px]">Brand Assets</h1>
       <div className="grid items-center gap-8 md:grid-cols-[minmax(260px,42%)_1fr]">
         <img src={asset.image} alt={asset.title} className={`mx-auto max-h-[440px] w-full object-contain ${asset.circular ? "max-w-[390px] rounded-full" : ""}`} />
         <div>

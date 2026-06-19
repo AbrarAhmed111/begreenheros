@@ -10,7 +10,7 @@ export default function Header({ pageTitle, onMenuToggle }: HeaderProps) {
           <img src="/img/bgh-logo.jpeg" className="h-11 w-11 rounded-full object-cover sm:h-12 sm:w-12" alt="Be Green Heroes circular logo" />
           <img src="/img/logo.png" className="hidden h-14 w-auto object-contain sm:block" alt="Be Green Heroes wordmark" />
         </Link>
-        <p className="flex-1 px-3 text-center text-[clamp(18px,1.5vw,28px)] font-semibold">{pageTitle}</p>
+        <p className="flex-1 px-3 text-center text-lg font-semibold sm:text-xl md:text-[28px]">{pageTitle}</p>
         <button
           type="button"
           onClick={onMenuToggle}
