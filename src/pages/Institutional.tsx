@@ -1,10 +1,196 @@
 import { FormEvent } from "react";
-import { FaCreditCard, FaIdCard, FaLock, FaPaypal, FaUniversity } from "react-icons/fa";
+import {
+    FaCreditCard,
+    FaIdCard,
+    FaLock,
+    FaPaypal,
+    FaUniversity,
+} from "react-icons/fa";
 import { FormField } from "../components/ui/FormField";
 
 export default function Institutional() {
-  const submit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); console.info("Static institutional enrollment form submitted", new FormData(event.currentTarget)); };
-  return (
-    <section className="mx-auto max-w-5xl px-2 py-6 sm:p-8"><div className="mb-8 text-center"><FaUniversity className="mx-auto text-5xl text-blue" /><h1 className="mt-3 text-4xl font-bold text-dull-green">Enroll Your Institution</h1><p className="mt-2 text-muted">Empower your entire community with science-based sustainability learning.</p><p className="mt-4 text-3xl font-bold text-blue">$3,000 <span className="text-base font-normal text-muted">/ year example tier</span></p></div><div className="mb-6 flex items-start gap-4 rounded-mission bg-light-muted p-5 text-navy"><FaIdCard className="mt-1 shrink-0 text-2xl" /><p><strong>Institution verification required.</strong> Upload a valid document showing your organization’s identity. This static demo does not transmit or store files.</p></div><form onSubmit={submit} className="overflow-hidden rounded-mission bg-white shadow-card"><div className="grid gap-8 p-6 sm:p-9 lg:grid-cols-2"><fieldset className="space-y-5"><legend className="mb-5 text-2xl font-bold">Institution Information</legend><FormField label="Institution Name" name="institution" placeholder="Enter institution name" required /><label className="block font-semibold">Institution Type<select name="institution_type" required className="mt-1 w-full rounded-xl border border-gray-300 bg-white p-3 font-normal"><option value="">Select type</option><option>School / University</option><option>Company</option><option>Nonprofit</option><option>Government</option></select></label><label className="block font-semibold">Verification Document<input type="file" name="document" required className="mt-1 w-full rounded-xl border border-gray-300 bg-white p-3 font-normal" /></label><FormField label="Number of Members / Employees" name="members" type="number" placeholder="e.g. 750" required /><FormField label="Administrator Full Name" name="admin_name" placeholder="Primary contact" required /><FormField label="Administrator Email" name="admin_email" type="email" placeholder="admin@institution.org" required /></fieldset><fieldset><legend className="mb-5 text-2xl font-bold">Select Payment Method</legend><div className="mb-5 grid grid-cols-2 gap-3"><label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-blue p-3 text-blue"><input type="radio" name="payment" value="card" defaultChecked className="accent-blue" /><FaCreditCard /> Credit Card</label><label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border p-3"><input type="radio" name="payment" value="paypal" className="accent-blue" /><FaPaypal /> PayPal</label></div><div className="space-y-5"><FormField label="Cardholder Name" name="card_name" placeholder="Name on card" required /><FormField label="Card Number" name="card_number" placeholder="1234 5678 9012 3456" required /><div className="grid grid-cols-2 gap-4"><FormField label="Expiry Date" name="expiry" placeholder="MM / YY" required /><FormField label="CVV" name="cvv" type="password" placeholder="123" required /></div></div><div className="mt-6 rounded-xl border border-gray-200 p-5"><h3 className="flex items-center gap-2 font-bold"><FaPaypal /> PayPal Payment</h3><p className="mt-2 text-sm text-muted">Choose PayPal above to complete enrollment through your PayPal account in the production service.</p></div></fieldset></div><div className="border-t bg-gray-50 p-6 sm:px-9"><label className="flex items-start gap-3"><input type="checkbox" required className="mt-1 h-5 w-5 accent-blue" /><span>I confirm that I am authorized to enroll this institution and agree to the membership terms.</span></label><p className="mt-4 flex items-center gap-2 text-sm text-muted"><FaLock /> Your payment details are represented for UI demonstration only.</p><button type="submit" className="mt-5 w-full rounded-xl bg-blue p-3.5 font-bold text-white">Complete Enrollment</button></div></form></section>
-  );
+    const submit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.info(
+            "Static institutional enrollment form submitted",
+            new FormData(event.currentTarget)
+        );
+    };
+    return (
+        <section className="mx-auto max-w-5xl px-2 py-6 sm:p-8">
+            <div className="mb-8 text-center">
+                <FaUniversity className="mx-auto text-5xl text-blue" />
+                <h1 className="mt-3 text-4xl font-bold text-dull-green">
+                    Enroll Your Institution
+                </h1>
+                <p className="mt-2 text-muted">
+                    Empower your entire community with science-based
+                    sustainability learning.
+                </p>
+                <p className="mt-4 text-3xl font-bold text-blue">
+                    $3,000{" "}
+                    <span className="text-base font-normal text-muted">
+                        / year example tier
+                    </span>
+                </p>
+            </div>
+            <div className="mb-6 flex items-start gap-4 rounded-mission bg-light-muted p-5 text-navy">
+                <FaIdCard className="mt-1 shrink-0 text-2xl" />
+                <p>
+                    <strong>Institution verification required.</strong> Upload a
+                    valid document showing your organization’s identity. This
+                    static demo does not transmit or store files.
+                </p>
+            </div>
+            <form
+                onSubmit={submit}
+                className="overflow-hidden rounded-mission bg-white shadow-card"
+            >
+                <div className="grid gap-8 p-6 sm:p-9 lg:grid-cols-2">
+                    <fieldset className="space-y-5">
+                        <legend className="mb-5 text-2xl font-bold">
+                            Institution Information
+                        </legend>
+                        <FormField
+                            label="Institution Name"
+                            name="institution"
+                            placeholder="Enter institution name"
+                            required
+                        />
+                        <label className="block font-semibold">
+                            Institution Type
+                            <select
+                                name="institution_type"
+                                required
+                                className="mt-1 w-full rounded-xl border border-gray-300 bg-white p-3 font-normal"
+                            >
+                                <option value="">Select type</option>
+                                <option>School / University</option>
+                                <option>Company</option>
+                                <option>Nonprofit</option>
+                                <option>Government</option>
+                            </select>
+                        </label>
+                        <label className="block font-semibold">
+                            Verification Document
+                            <input
+                                type="file"
+                                name="document"
+                                required
+                                className="mt-1 w-full rounded-xl border border-gray-300 bg-white p-3 font-normal"
+                            />
+                        </label>
+                        <FormField
+                            label="Number of Members / Employees"
+                            name="members"
+                            type="number"
+                            placeholder="e.g. 750"
+                            required
+                        />
+                        <FormField
+                            label="Administrator Full Name"
+                            name="admin_name"
+                            placeholder="Primary contact"
+                            required
+                        />
+                        <FormField
+                            label="Administrator Email"
+                            name="admin_email"
+                            type="email"
+                            placeholder="admin@institution.org"
+                            required
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend className="mb-5 text-2xl font-bold">
+                            Select Payment Method
+                        </legend>
+                        <div className="mb-5 grid grid-cols-2 gap-3">
+                            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-blue p-3 text-blue">
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="card"
+                                    defaultChecked
+                                    className="accent-blue"
+                                />
+                                <FaCreditCard /> Credit Card
+                            </label>
+                            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border p-3">
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="paypal"
+                                    className="accent-blue"
+                                />
+                                <FaPaypal /> PayPal
+                            </label>
+                        </div>
+                        <div className="space-y-5">
+                            <FormField
+                                label="Cardholder Name"
+                                name="card_name"
+                                placeholder="Name on card"
+                                required
+                            />
+                            <FormField
+                                label="Card Number"
+                                name="card_number"
+                                placeholder="1234 5678 9012 3456"
+                                required
+                            />
+                            <div className="grid grid-cols-2 gap-4">
+                                <FormField
+                                    label="Expiry Date"
+                                    name="expiry"
+                                    placeholder="MM / YY"
+                                    required
+                                />
+                                <FormField
+                                    label="CVV"
+                                    name="cvv"
+                                    type="password"
+                                    placeholder="123"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="mt-6 rounded-xl border border-gray-200 p-5">
+                            <h3 className="flex items-center gap-2 font-bold">
+                                <FaPaypal /> PayPal Payment
+                            </h3>
+                            <p className="mt-2 text-sm text-muted">
+                                Choose PayPal above to complete enrollment
+                                through your PayPal account in the production
+                                service.
+                            </p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div className="border-t bg-gray-50 p-6 sm:px-9">
+                    <label className="flex items-start gap-3">
+                        <input
+                            type="checkbox"
+                            required
+                            className="mt-1 h-5 w-5 accent-blue"
+                        />
+                        <span>
+                            I confirm that I am authorized to enroll this
+                            institution and agree to the membership terms.
+                        </span>
+                    </label>
+                    <p className="mt-4 flex items-center gap-2 text-sm text-muted">
+                        <FaLock /> Your payment details are represented for UI
+                        demonstration only.
+                    </p>
+                    <button
+                        type="submit"
+                        className="mt-5 w-full rounded-xl bg-blue p-3.5 font-bold text-white"
+                    >
+                        Complete Enrollment
+                    </button>
+                </div>
+            </form>
+        </section>
+    );
 }

@@ -4,9 +4,147 @@ import { FormField } from "../components/ui/FormField";
 import { Quote } from "../components/ui/Quote";
 
 export default function Individual() {
-  const submit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); console.info("Static individual membership form submitted", new FormData(event.currentTarget)); };
-  return (
-    <section className="mx-auto max-w-5xl px-2 py-6 sm:p-8"><Quote>Power Belongs to the Informed</Quote><div className="my-8 text-center"><FaUser className="mx-auto text-5xl text-green" /><h1 className="mt-3 text-4xl font-bold text-dull-green">Join as an Individual</h1><p className="mt-2 text-muted">Learn deeper, earn more, and strengthen your impact.</p><p className="mt-4 text-3xl font-bold text-green">$10 <span className="text-base font-normal text-muted">/ month</span></p></div><form onSubmit={submit} className="overflow-hidden rounded-mission bg-white shadow-card"><div className="grid gap-8 p-6 sm:p-9 lg:grid-cols-2"><fieldset className="space-y-5"><legend className="mb-5 text-2xl font-bold">Create Your Account</legend><FormField label="Full Name" name="name" placeholder="Enter your full name" required /><FormField label="Email Address" name="email" type="email" placeholder="Enter your email" required /><FormField label="Password" name="password" type="password" placeholder="Create a password" required /><FormField label="Confirm Password" name="password_confirmation" type="password" placeholder="Confirm your password" required /></fieldset><fieldset><legend className="mb-5 text-2xl font-bold">Payment Method</legend><div className="mb-5 grid grid-cols-2 gap-3"><label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-green p-3 text-green"><input type="radio" name="payment" value="card" defaultChecked className="accent-green" /><FaCreditCard /> Credit Card</label><label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border p-3"><input type="radio" name="payment" value="paypal" className="accent-green" /><FaPaypal /> PayPal</label></div><div className="space-y-5"><FormField label="Cardholder Name" name="card_name" placeholder="Name on card" required /><FormField label="Card Number" name="card_number" placeholder="1234 5678 9012 3456" required /><div className="grid grid-cols-2 gap-4"><FormField label="Expiry Date" name="expiry" placeholder="MM / YY" required /><FormField label="CVV" name="cvv" type="password" placeholder="123" required /></div></div></fieldset></div><div className="border-t bg-gray-50 p-6 sm:px-9"><label className="flex items-start gap-3"><input type="checkbox" required className="mt-1 h-5 w-5 accent-green" /><span>I agree to the membership terms and recurring monthly billing.</span></label><p className="mt-4 flex items-center gap-2 text-sm text-muted"><FaLock /> Your payment is secure and encrypted.</p><button type="submit" className="mt-5 w-full rounded-xl bg-green p-3.5 font-bold text-white">Join Now</button></div></form></section>
-  );
+    const submit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.info(
+            "Static individual membership form submitted",
+            new FormData(event.currentTarget)
+        );
+    };
+    return (
+        <section className="mx-auto max-w-5xl px-2 py-6 sm:p-8">
+            <Quote>Power Belongs to the Informed</Quote>
+            <div className="my-8 text-center">
+                <FaUser className="mx-auto text-5xl text-green" />
+                <h1 className="mt-3 text-4xl font-bold text-dull-green">
+                    Join as an Individual
+                </h1>
+                <p className="mt-2 text-muted">
+                    Learn deeper, earn more, and strengthen your impact.
+                </p>
+                <p className="mt-4 text-3xl font-bold text-green">
+                    $10{" "}
+                    <span className="text-base font-normal text-muted">
+                        / month
+                    </span>
+                </p>
+            </div>
+            <form
+                onSubmit={submit}
+                className="overflow-hidden rounded-mission bg-white shadow-card"
+            >
+                <div className="grid gap-8 p-6 sm:p-9 lg:grid-cols-2">
+                    <fieldset className="space-y-5">
+                        <legend className="mb-5 text-2xl font-bold">
+                            Create Your Account
+                        </legend>
+                        <FormField
+                            label="Full Name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        />
+                        <FormField
+                            label="Email Address"
+                            name="email"
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        />
+                        <FormField
+                            label="Password"
+                            name="password"
+                            type="password"
+                            placeholder="Create a password"
+                            required
+                        />
+                        <FormField
+                            label="Confirm Password"
+                            name="password_confirmation"
+                            type="password"
+                            placeholder="Confirm your password"
+                            required
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend className="mb-5 text-2xl font-bold">
+                            Payment Method
+                        </legend>
+                        <div className="mb-5 grid grid-cols-2 gap-3">
+                            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-green p-3 text-green">
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="card"
+                                    defaultChecked
+                                    className="accent-green"
+                                />
+                                <FaCreditCard /> Credit Card
+                            </label>
+                            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border p-3">
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="paypal"
+                                    className="accent-green"
+                                />
+                                <FaPaypal /> PayPal
+                            </label>
+                        </div>
+                        <div className="space-y-5">
+                            <FormField
+                                label="Cardholder Name"
+                                name="card_name"
+                                placeholder="Name on card"
+                                required
+                            />
+                            <FormField
+                                label="Card Number"
+                                name="card_number"
+                                placeholder="1234 5678 9012 3456"
+                                required
+                            />
+                            <div className="grid grid-cols-2 gap-4">
+                                <FormField
+                                    label="Expiry Date"
+                                    name="expiry"
+                                    placeholder="MM / YY"
+                                    required
+                                />
+                                <FormField
+                                    label="CVV"
+                                    name="cvv"
+                                    type="password"
+                                    placeholder="123"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div className="border-t bg-gray-50 p-6 sm:px-9">
+                    <label className="flex items-start gap-3">
+                        <input
+                            type="checkbox"
+                            required
+                            className="mt-1 h-5 w-5 accent-green"
+                        />
+                        <span>
+                            I agree to the membership terms and recurring
+                            monthly billing.
+                        </span>
+                    </label>
+                    <p className="mt-4 flex items-center gap-2 text-sm text-muted">
+                        <FaLock /> Your payment is secure and encrypted.
+                    </p>
+                    <button
+                        type="submit"
+                        className="mt-5 w-full rounded-xl bg-green p-3.5 font-bold text-white"
+                    >
+                        Join Now
+                    </button>
+                </div>
+            </form>
+        </section>
+    );
 }
-

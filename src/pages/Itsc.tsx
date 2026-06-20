@@ -91,7 +91,7 @@ const timeline = [
         id: "info-session-1",
         left: (
             <>
-                September 28<sup>th</sup> – October 2<sup>nd</sup>
+                September 28th – October 2nd
                 <br />
                 2026
             </>
@@ -113,11 +113,7 @@ const timeline = [
     },
     {
         id: "info-session-2",
-        left: (
-            <>
-                October 12<sup>th</sup> – 16<sup>th</sup>, 2026
-            </>
-        ),
+        left: "October 12th – 16th, 2026",
         right: (
             <>
                 Info Session
@@ -130,20 +126,12 @@ const timeline = [
     {
         id: "submissions-due",
         left: "Submissions Due",
-        right: (
-            <>
-                October 30<sup>th</sup>, 2026
-            </>
-        ),
+        right: "October 30th, 2026",
         icon: FaFileAlt,
     },
     {
         id: "judging-period",
-        left: (
-            <>
-                November 1<sup>st</sup> - 15<sup>th</sup>, 2026
-            </>
-        ),
+        left: "November 1st - 15th, 2026",
         right: "Judging period",
         icon: FaCheck,
     },
@@ -157,10 +145,8 @@ const timeline = [
 
 function TimelineCard({ children }: { children: ReactNode }) {
     return (
-        <div className="box-border flex min-h-[132px] w-[280px] shrink-0 items-center justify-center rounded-[18px] border-2 border-dull-green bg-white px-6 py-7 shadow-[2px_4px_10px_rgba(0,0,0,0.12)] sm:min-h-[148px] sm:w-[340px] sm:px-8 sm:py-8">
-            <div className="w-full text-center text-xl font-bold leading-normal text-body sm:text-2xl [&_sup]:ml-px [&_sup]:inline-block [&_sup]:translate-y-[-0.4em] [&_sup]:text-[0.55em] [&_sup]:font-bold">
-                {children}
-            </div>
+        <div className="box-border flex min-h-[160px] w-[300px] shrink-0 items-center justify-center rounded-[18px] border-2 border-dull-green bg-white px-6 py-7 text-center text-[35px] font-semibold leading-snug text-body shadow-[2px_4px_10px_rgba(0,0,0,0.12)] sm:min-h-[170px] sm:w-[360px] sm:px-4 sm:py-4">
+            {children}
         </div>
     );
 }
@@ -169,7 +155,9 @@ function TimelineConnector({ visible = true }: { visible?: boolean }) {
     return (
         <span
             aria-hidden="true"
-            className={`h-px w-8 shrink-0 sm:w-12 ${visible ? "bg-dull-green" : "bg-transparent"}`}
+            className={`h-px w-8 shrink-0 sm:w-12 ${
+                visible ? "bg-dull-green" : "bg-transparent"
+            }`}
         />
     );
 }
@@ -255,11 +243,12 @@ export default function Itsc() {
                         </h3>
                         <p className="mt-4 text-lg leading-relaxed">
                             ITSC attracted participants from 120 countries and
-                            704 post-secondary educational programs in 2024. This
-                            global convergence of individuals and teams fostered a
-                            dynamic exchange of ideas on sustainability, turning
-                            the competition into a powerful platform for
-                            innovation and forward-thinking solutions.
+                            704 post-secondary educational programs in 2024.
+                            This global convergence of individuals and teams
+                            fostered a dynamic exchange of ideas on
+                            sustainability, turning the competition into a
+                            powerful platform for innovation and
+                            forward-thinking solutions.
                         </p>
                     </article>
                     <article className="flex min-h-[400px] flex-col items-center justify-center rounded-mission bg-dull-green p-8 text-white sm:min-h-[440px] sm:p-10">

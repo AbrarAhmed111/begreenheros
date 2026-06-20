@@ -1,3 +1,5 @@
 import AssetDetailPage from "../../components/ui/AssetDetailPage";
 import { assets } from "../../utils/content";
-export default function AssetBgh1() { return <AssetDetailPage asset={assets.bgh1} />; }
+export default function AssetBgh1() {
+    return <AssetDetailPage asset={assets.bgh1} />;
+}

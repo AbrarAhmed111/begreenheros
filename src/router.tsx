@@ -28,7 +28,9 @@ const AssetBgh1 = lazy(() => import("./pages/brand-assets/AssetBgh1"));
 const AssetBgh2 = lazy(() => import("./pages/brand-assets/AssetBgh2"));
 const AssetBgh3 = lazy(() => import("./pages/brand-assets/AssetBgh3"));
 const AssetGToken = lazy(() => import("./pages/brand-assets/AssetGToken"));
-const AssetGNonToken = lazy(() => import("./pages/brand-assets/AssetGNonToken"));
+const AssetGNonToken = lazy(
+    () => import("./pages/brand-assets/AssetGNonToken")
+);
 const AssetMc = lazy(() => import("./pages/brand-assets/AssetMc"));
 const AssetMcc = lazy(() => import("./pages/brand-assets/AssetMcc"));
 const AssetMco = lazy(() => import("./pages/brand-assets/AssetMco"));
@@ -38,66 +40,109 @@ const AssetPuc = lazy(() => import("./pages/brand-assets/AssetPuc"));
 const AssetVuc = lazy(() => import("./pages/brand-assets/AssetVuc"));
 
 function loading(element: ReactNode) {
-  return <Suspense fallback={<div className="flex min-h-screen items-center justify-center text-2xl font-bold text-dull-green">Loading…</div>}>{element}</Suspense>;
+    return (
+        <Suspense
+            fallback={
+                <div className="flex min-h-screen items-center justify-center text-2xl font-bold text-dull-green">
+                    Loading…
+                </div>
+            }
+        >
+            {element}
+        </Suspense>
+    );
 }
 
 function RootLayout() {
-  return (
-    <>
-      <ScrollToTop />
-      <Outlet />
-    </>
-  );
+    return (
+        <>
+            <ScrollToTop />
+            <Outlet />
+        </>
+    );
 }
 
 const router = createBrowserRouter([
-  {
-    element: <RootLayout />,
-    children: [
-      { path: "/", element: loading(<Welcome />) },
-      {
-        element: <GuestLayout />,
+    {
+        element: <RootLayout />,
         children: [
-      { path: "/home", element: loading(<Home />) },
-      { path: "/creed", element: loading(<Creed />) },
-      { path: "/learn", element: loading(<Learn />) },
-      { path: "/learn/download", element: loading(<LearnDownload />) },
-      { path: "/learn/case-study", element: loading(<CaseStudy />) },
-      { path: "/itsc", element: loading(<Itsc />) },
-      { path: "/bgh", element: loading(<Bgh />) },
-      { path: "/bgh/official-documents", element: loading(<OfficialDocuments />) },
-      { path: "/brand-assets", element: loading(<BrandAssets />) },
-      { path: "/contact", element: loading(<Contact />) },
-      { path: "/my-rewards", element: loading(<UnderConstruction />) },
-      { path: "/vote", element: loading(<UnderConstruction />) },
-      { path: "/propose", element: loading(<UnderConstruction />) },
-      { path: "/faq", element: loading(<UnderConstruction />) },
-      { path: "/under-construction", element: loading(<UnderConstruction />) },
-      { path: "/subscription", element: loading(<Subscription />) },
-      { path: "/individual", element: loading(<Individual />) },
-      { path: "/institutional", element: loading(<Institutional />) },
-      { path: "/hero-mia", element: loading(<HeroMia />) },
-      { path: "/hero-elio", element: loading(<HeroElio />) },
-      { path: "/hero-lina", element: loading(<HeroLina />) },
-      { path: "/hero-niko", element: loading(<HeroNiko />) },
-      { path: "/asset-bgh", element: loading(<AssetBgh />) },
-      { path: "/asset-bgh-1", element: loading(<AssetBgh1 />) },
-      { path: "/asset-bgh-2", element: loading(<AssetBgh2 />) },
-      { path: "/asset-bgh-3", element: loading(<AssetBgh3 />) },
-      { path: "/asset-g-token", element: loading(<AssetGToken />) },
-      { path: "/asset-g-non-token", element: loading(<AssetGNonToken />) },
-      { path: "/asset-mc", element: loading(<AssetMc />) },
-      { path: "/asset-mcc", element: loading(<AssetMcc />) },
-      { path: "/asset-mco", element: loading(<AssetMco />) },
-      { path: "/asset-uc", element: loading(<AssetUc />) },
-      { path: "/asset-muc", element: loading(<AssetMuc />) },
-      { path: "/asset-puc", element: loading(<AssetPuc />) },
-      { path: "/asset-vuc", element: loading(<AssetVuc />) },
+            { path: "/", element: loading(<Welcome />) },
+            {
+                element: <GuestLayout />,
+                children: [
+                    { path: "/home", element: loading(<Home />) },
+                    { path: "/creed", element: loading(<Creed />) },
+                    { path: "/learn", element: loading(<Learn />) },
+                    {
+                        path: "/learn/download",
+                        element: loading(<LearnDownload />),
+                    },
+                    {
+                        path: "/learn/case-study",
+                        element: loading(<CaseStudy />),
+                    },
+                    { path: "/itsc", element: loading(<Itsc />) },
+                    { path: "/bgh", element: loading(<Bgh />) },
+                    {
+                        path: "/bgh/official-documents",
+                        element: loading(<OfficialDocuments />),
+                    },
+                    {
+                        path: "/brand-assets",
+                        element: loading(<BrandAssets />),
+                    },
+                    { path: "/contact", element: loading(<Contact />) },
+                    {
+                        path: "/my-rewards",
+                        element: loading(<UnderConstruction />),
+                    },
+                    { path: "/vote", element: loading(<UnderConstruction />) },
+                    {
+                        path: "/propose",
+                        element: loading(<UnderConstruction />),
+                    },
+                    { path: "/faq", element: loading(<UnderConstruction />) },
+                    {
+                        path: "/under-construction",
+                        element: loading(<UnderConstruction />),
+                    },
+                    {
+                        path: "/subscription",
+                        element: loading(<Subscription />),
+                    },
+                    { path: "/individual", element: loading(<Individual />) },
+                    {
+                        path: "/institutional",
+                        element: loading(<Institutional />),
+                    },
+                    { path: "/hero-mia", element: loading(<HeroMia />) },
+                    { path: "/hero-elio", element: loading(<HeroElio />) },
+                    { path: "/hero-lina", element: loading(<HeroLina />) },
+                    { path: "/hero-niko", element: loading(<HeroNiko />) },
+                    { path: "/asset-bgh", element: loading(<AssetBgh />) },
+                    { path: "/asset-bgh-1", element: loading(<AssetBgh1 />) },
+                    { path: "/asset-bgh-2", element: loading(<AssetBgh2 />) },
+                    { path: "/asset-bgh-3", element: loading(<AssetBgh3 />) },
+                    {
+                        path: "/asset-g-token",
+                        element: loading(<AssetGToken />),
+                    },
+                    {
+                        path: "/asset-g-non-token",
+                        element: loading(<AssetGNonToken />),
+                    },
+                    { path: "/asset-mc", element: loading(<AssetMc />) },
+                    { path: "/asset-mcc", element: loading(<AssetMcc />) },
+                    { path: "/asset-mco", element: loading(<AssetMco />) },
+                    { path: "/asset-uc", element: loading(<AssetUc />) },
+                    { path: "/asset-muc", element: loading(<AssetMuc />) },
+                    { path: "/asset-puc", element: loading(<AssetPuc />) },
+                    { path: "/asset-vuc", element: loading(<AssetVuc />) },
+                ],
+            },
+            { path: "*", element: <Navigate to="/" replace /> },
         ],
-      },
-      { path: "*", element: <Navigate to="/" replace /> },
-    ],
-  },
+    },
 ]);
 
 export default router;

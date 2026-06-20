@@ -6,7 +6,7 @@ export default function Contact() {
         event.preventDefault();
         console.info(
             "Static contact form submitted",
-            new FormData(event.currentTarget),
+            new FormData(event.currentTarget)
         );
     };
 
