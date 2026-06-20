@@ -1,33 +1,98 @@
-# Be Green Heroes — React Rebuild
+# Be Green Heroes
 
-Static React/TypeScript/Tailwind rebuild of the Be Green Heroes public website.
+Static React rebuild of the [Be Green Heroes](https://begreenheroes.com) public website — a learning platform focused on environmental science, sustainability education, and the ITSC (International True Sustainability Competition).
 
-## Stack
+## Tech stack
 
--   React 18 with functional components and hooks
--   TypeScript in strict mode
--   React Router 6 with lazy-loaded pages
--   Tailwind CSS 3 using BGH tokens from `tailwind.config.ts`
--   Vite
+- **React 18** — functional components and hooks
+- **TypeScript** — strict mode
+- **React Router 6** — client-side routing with lazy-loaded pages
+- **Tailwind CSS 3** — utility-first styling with BGH design tokens in `tailwind.config.ts`
+- **Vite 5** — dev server and production builds
+- **Prettier** — code formatting
 
-## Structure
+## Features
 
--   `src/pages/` — public page components, hero profiles, and brand-asset detail pages
--   `src/components/layout/` — fixed guest header/sidebar shell
--   `src/components/modals/` — static ITSC registration and success flows
--   `src/components/ui/` — shared buttons, quotes, form fields, and detail layouts
--   `src/context/` and `src/hooks/` — local modal/sidebar state
--   `src/types/` — shared TypeScript interfaces
--   `src/utils/` — shared content and page data
--   `public/img`, `public/pdf`, `public/video` — static public assets
+- Welcome landing page with intro video
+- Missions hub with modal detail views (Home)
+- Green Heroes Creed, Learn, ITSC 2026, BGH Operations, Brand Assets, and Contact pages
+- ITSC registration modal (individual and team flows)
+- Responsive guest layout with sidebar navigation and mobile menu
+- Hero character and brand asset detail pages with downloadable assets
+- Under-construction placeholders for upcoming sections (Rewards, Vote, Propose, FAQ)
 
-## Commands
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+ recommended
+- npm
+
+### Install
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-npm run typecheck
-npm run build
-npm run preview
 ```
 
-Forms are intentionally static: submissions only write a message to the browser console and never call a backend.
+Open [http://localhost:5173](http://localhost:5173).
+
+### Other commands
+
+| Command            | Description                          |
+| ------------------ | ------------------------------------ |
+| `npm run build`    | Production build to `dist/`          |
+| `npm run preview`  | Preview the production build locally |
+| `npm run typecheck`| Run TypeScript without emitting      |
+| `npm run format`   | Format all files with Prettier       |
+
+## Project structure
+
+```
+src/
+├── components/
+│   ├── layout/       # Header, Sidebar, GuestLayout
+│   ├── modals/       # ITSC registration, success modal
+│   └── ui/           # Shared UI (Modal, Button, FormField, etc.)
+├── context/          # Modal provider
+├── hooks/            # useModal, useSidebar
+├── pages/            # Route page components
+│   ├── brand-assets/ # Individual asset detail pages
+│   └── heros/        # Hero character detail pages
+├── types/            # Shared TypeScript interfaces
+├── utils/            # Mission, hero, and asset content
+├── router.tsx        # Route definitions
+└── main.tsx          # App entry point
+
+public/
+├── img/              # Images and brand assets
+├── pdf/              # Downloadable documents
+└── video/            # Welcome page video
+```
+
+## Deployment
+
+The repo includes a `vercel.json` SPA rewrite so client-side routes work on refresh and direct links:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+Build output is the `dist/` folder (`npm run build`). Deploy that directory to any static host (Vercel, Netlify, etc.).
+
+## Notes
+
+- **Static demo:** Forms (contact, ITSC registration, membership) do not submit to a backend. Submissions are logged to the browser console only.
+- **Assets:** PDFs and images live under `public/` and are served as static files.
+- **Styling:** Prefer Tailwind utilities and tokens from `tailwind.config.ts` over custom CSS.
+
+## License
+
+Private project. All rights reserved.
