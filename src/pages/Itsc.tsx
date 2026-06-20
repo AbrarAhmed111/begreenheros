@@ -237,11 +237,11 @@ export default function Itsc() {
 
                 <div className="mt-16 grid gap-8 sm:mt-20 lg:grid-cols-2">
                     <article className="flex min-h-[400px] flex-col items-center justify-center rounded-mission bg-dull-green p-8 text-white sm:min-h-[440px] sm:p-10">
-                        <FaGlobe className="mb-4 text-4xl" />
-                        <h3 className="text-3xl font-semibold">
+                        <FaGlobe className="mb-4 text-2xl sm:text-3xl md:text-4xl" />
+                        <h3 className="text-xl font-semibold sm:text-2xl md:text-3xl">
                             Worldwide Engagement
                         </h3>
-                        <p className="mt-4 text-lg leading-relaxed">
+                        <p className="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
                             ITSC attracted participants from 120 countries and
                             704 post-secondary educational programs in 2024.
                             This global convergence of individuals and teams
@@ -252,11 +252,11 @@ export default function Itsc() {
                         </p>
                     </article>
                     <article className="flex min-h-[400px] flex-col items-center justify-center rounded-mission bg-dull-green p-8 text-white sm:min-h-[440px] sm:p-10">
-                        <FaLeaf className="mb-4 text-4xl" />
-                        <h3 className="text-3xl font-semibold">
+                        <FaLeaf className="mb-4 text-2xl sm:text-3xl md:text-4xl" />
+                        <h3 className="text-xl font-semibold sm:text-2xl md:text-3xl">
                             Environmental Science over Narratives and Hypes
                         </h3>
-                        <p className="mt-4 text-lg leading-relaxed">
+                        <p className="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
                             BE GREEN HEROES platform provides valuable learning
                             opportunities on environmental science, expanding
                             knowledge beyond surface level perception and
