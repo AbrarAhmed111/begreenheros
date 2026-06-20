@@ -145,7 +145,7 @@ const timeline = [
 
 function TimelineCard({ children }: { children: ReactNode }) {
     return (
-        <div className="relative z-10 box-border flex w-full max-w-[min(100%,300px)] min-h-[88px] items-center justify-center rounded-[18px] border-2 border-dull-green bg-white px-4 py-4 text-center text-sm font-semibold leading-snug text-body shadow-[2px_4px_10px_rgba(0,0,0,0.12)] sm:max-w-[320px] sm:min-h-[96px] sm:text-base md:max-w-[340px] md:text-lg lg:min-h-[170px] lg:w-[360px] lg:max-w-none lg:shrink-0 lg:px-4 lg:py-4 lg:text-[35px]">
+        <div className="relative z-10 box-border flex w-full min-h-0 items-center justify-center rounded-full border-2 border-dull-green bg-white px-4 py-2.5 text-center text-xs font-semibold leading-snug text-body shadow-[2px_4px_10px_rgba(0,0,0,0.12)] sm:text-sm lg:min-h-[170px] lg:w-[360px] lg:max-w-none lg:shrink-0 lg:rounded-[18px] lg:px-4 lg:py-4 lg:text-[35px]">
             {children}
         </div>
     );
@@ -174,19 +174,37 @@ function TimelineRow({
     connectLeft: boolean;
 }) {
     return (
-        <article className="relative flex flex-col items-center gap-3 sm:gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-0">
-            <div className="flex w-full flex-col items-center lg:flex-row lg:justify-end">
-                <TimelineCard>{left}</TimelineCard>
-                <TimelineConnector visible={connectLeft} />
+        <article className="relative">
+            <div className="flex items-center lg:hidden">
+                <div className="relative z-10 flex w-10 shrink-0 justify-center">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-dull-green text-sm text-white">
+                        <Icon aria-hidden="true" />
+                    </div>
+                </div>
+                <span
+                    aria-hidden="true"
+                    className="h-px w-3 shrink-0 bg-dull-green"
+                />
+                <div className="flex min-w-0 flex-1 flex-col gap-2">
+                    <TimelineCard>{left}</TimelineCard>
+                    <TimelineCard>{right}</TimelineCard>
+                </div>
             </div>
 
-            <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-dull-green text-base text-white sm:h-11 sm:w-11 sm:text-lg lg:h-12 lg:w-12">
-                <Icon aria-hidden="true" />
-            </div>
+            <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+                <div className="flex items-center justify-end">
+                    <TimelineCard>{left}</TimelineCard>
+                    <TimelineConnector visible={connectLeft} />
+                </div>
 
-            <div className="flex w-full flex-col items-center lg:flex-row lg:justify-start">
-                <TimelineConnector />
-                <TimelineCard>{right}</TimelineCard>
+                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-dull-green text-lg text-white">
+                    <Icon aria-hidden="true" />
+                </div>
+
+                <div className="flex items-center justify-start">
+                    <TimelineConnector />
+                    <TimelineCard>{right}</TimelineCard>
+                </div>
             </div>
         </article>
     );
@@ -325,18 +343,24 @@ export default function Itsc() {
                     TIMELINE
                 </h2>
                 <hr className="mx-auto mt-6 max-w-5xl border-t border-soft-border" />
-                <div className="relative mx-auto mt-8 max-w-6xl space-y-8 sm:mt-10 sm:space-y-10 lg:mt-10 lg:space-y-14">
+                <div className="relative mx-auto mt-8 max-w-6xl sm:mt-10 lg:mt-10">
                     <span
                         aria-hidden="true"
-                        className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-dull-green"
+                        className="absolute bottom-0 left-5 top-0 w-px -translate-x-1/2 bg-dull-green lg:hidden"
                     />
-                    {timeline.map(({ id, ...item }, index) => (
-                        <TimelineRow
-                            key={id}
-                            {...item}
-                            connectLeft={index % 2 === 1}
-                        />
-                    ))}
+                    <span
+                        aria-hidden="true"
+                        className="absolute bottom-0 left-1/2 top-0 hidden w-px -translate-x-1/2 bg-dull-green lg:block"
+                    />
+                    <div className="flex flex-col gap-8 lg:gap-14">
+                        {timeline.map(({ id, ...item }, index) => (
+                            <TimelineRow
+                                key={id}
+                                {...item}
+                                connectLeft={index % 2 === 1}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
 
