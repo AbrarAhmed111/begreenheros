@@ -143,10 +143,22 @@ const timeline = [
     },
 ] as const;
 
-function TimelineCard({ children }: { children: ReactNode }) {
+function TimelineMobileCard({ children }: { children: ReactNode }) {
     return (
-        <div className="relative z-10 box-border flex w-full min-h-0 items-center justify-center rounded-full border-2 border-dull-green bg-white px-4 py-2.5 text-center text-xs font-semibold leading-snug text-body shadow-[2px_4px_10px_rgba(0,0,0,0.12)] sm:text-sm lg:min-h-[170px] lg:w-[360px] lg:max-w-none lg:shrink-0 lg:rounded-[18px] lg:px-4 lg:py-4 lg:text-[35px]">
-            {children}
+        <div className="relative z-10 box-border flex w-full items-center justify-center rounded-full border-2 border-dull-green bg-white px-4 py-2.5 shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+            <div className="w-full text-center text-xs font-semibold leading-snug text-body sm:text-sm">
+                {children}
+            </div>
+        </div>
+    );
+}
+
+function TimelineDesktopCard({ children }: { children: ReactNode }) {
+    return (
+        <div className="box-border flex min-h-[170px] w-[360px] shrink-0 items-center justify-center rounded-[18px] border-2 border-dull-green bg-white px-4 py-4 shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+            <div className="w-full text-center text-[35px] font-semibold leading-snug text-body">
+                {children}
+            </div>
         </div>
     );
 }
@@ -186,14 +198,14 @@ function TimelineRow({
                     className="h-px w-3 shrink-0 bg-dull-green"
                 />
                 <div className="flex min-w-0 flex-1 flex-col gap-2">
-                    <TimelineCard>{left}</TimelineCard>
-                    <TimelineCard>{right}</TimelineCard>
+                    <TimelineMobileCard>{left}</TimelineMobileCard>
+                    <TimelineMobileCard>{right}</TimelineMobileCard>
                 </div>
             </div>
 
             <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center">
                 <div className="flex items-center justify-end">
-                    <TimelineCard>{left}</TimelineCard>
+                    <TimelineDesktopCard>{left}</TimelineDesktopCard>
                     <TimelineConnector visible={connectLeft} />
                 </div>
 
@@ -203,7 +215,7 @@ function TimelineRow({
 
                 <div className="flex items-center justify-start">
                     <TimelineConnector />
-                    <TimelineCard>{right}</TimelineCard>
+                    <TimelineDesktopCard>{right}</TimelineDesktopCard>
                 </div>
             </div>
         </article>
