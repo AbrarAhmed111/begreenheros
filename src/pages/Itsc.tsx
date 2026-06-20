@@ -229,7 +229,7 @@ export default function Itsc() {
                     <a
                         href="/pdf/ITSC 2026 Post Secondary Guideline Booklet FINALv1.pdf"
                         download
-                        className="mt-2 inline-block rounded-lg bg-black px-8 py-8 text-[35px] font-semibold text-white transition hover:opacity-90"
+                        className="mt-2 inline-block rounded-lg bg-black px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 sm:px-8 sm:py-6 sm:text-xl md:py-8 md:text-[35px]"
                     >
                         Download ITSC 2026 Booklet
                     </a>
