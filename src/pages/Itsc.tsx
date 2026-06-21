@@ -377,10 +377,10 @@ export default function Itsc() {
             </div>
 
             <div className="-mx-4 -mb-4 bg-[#3e6b5a] px-5 pt-14 pb-[calc(3.5rem+1rem)] text-center text-white sm:-mx-5 sm:-mb-5 sm:pt-16 sm:pb-[calc(4rem+1.25rem)] md:pt-20 md:pb-[calc(5rem+1.25rem)]">
-                <h2 className="text-[28px] font-bold italic sm:text-[32px]">
+                <h2 className="text-[28px] font-semibold italic sm:text-[40px]">
                     Want to participate?
                 </h2>
-                <p className="mx-auto mt-3 max-w-3xl text-base italic leading-relaxed text-white/90 sm:text-lg">
+                <p className="mx-auto mt-3 max-w-3xl text-base italic leading-relaxed text-white/70 sm:text-[20px]">
                     Be ready and join us for the 2026 edition on this wonderful
                     journey and experience to recreate a new and cleaner world
                     with Clean Recycling Initiative.
@@ -388,16 +388,16 @@ export default function Itsc() {
                 <button
                     type="button"
                     onClick={openRegister}
-                    className="my-8 rounded-pill bg-gradient-to-r from-gradient-blue to-gradient-green px-10 py-3 text-base font-semibold not-italic text-white shadow-lg transition hover:scale-105 sm:my-10"
+                    className="my-8 rounded-pill bg-gradient-to-r from-gradient-blue to-gradient-green px-10 py-3 text-[20px]  not-italic text-white shadow-lg transition hover:scale-105 sm:my-10"
                 >
                     Register
                 </button>
-                <div className="mx-auto max-w-3xl">
-                    <h3 className="text-[22px] font-bold italic sm:text-[28px]">
+                <div className="mx-auto max-w-5xl">
+                    <h3 className="text-[22px] font-semibold italic sm:text-[35px]">
                         The Pinnacle of Sustainable Innovation and Marketing
                         Brilliance
                     </h3>
-                    <p className="mt-3 text-sm italic leading-relaxed text-white/90 sm:text-base">
+                    <p className="mt-3 text-sm italic leading-relaxed text-white/70 sm:text-[20px]">
                         The International Sustainability Marketing Competition
                         (ITSC), a hallmark event by the Clean Recycling
                         Initiative™, is more than just an event; it&apos;s a
