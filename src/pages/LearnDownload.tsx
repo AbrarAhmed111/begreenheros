@@ -63,23 +63,23 @@ export default function LearnDownload() {
             <Modal
                 open={Boolean(selectedFile)}
                 labelledBy="download-title"
-                panelClassName="relative max-w-lg overflow-hidden rounded-mission bg-white shadow-modal"
+                panelClassName="relative max-h-[calc(100dvh-1.5rem)] max-w-lg overflow-hidden rounded-mission bg-white shadow-modal sm:max-h-none"
             >
-                <div className="rounded-t-mission bg-gradient-to-br from-dull-blue to-green p-6 text-white">
+                <div className="rounded-t-mission bg-gradient-to-br from-dull-blue to-green p-4 text-white sm:p-6">
                     <button
                         type="button"
                         onClick={() => setSelectedFile(null)}
-                        className="absolute right-4 top-4 p-2"
+                        className="absolute right-3 top-3 p-2 sm:right-4 sm:top-4"
                         aria-label="Close download form"
                     >
                         <FaTimes />
                     </button>
-                    <h2 id="download-title" className="text-2xl font-bold">
+                    <h2 id="download-title" className="pr-8 text-xl font-bold sm:text-2xl">
                         Download Chapter
                     </h2>
-                    <p>Enter your details to continue</p>
+                    <p className="text-sm sm:text-base">Enter your details to continue</p>
                 </div>
-                <form onSubmit={submit} className="space-y-4 p-6">
+                <form onSubmit={submit} className="space-y-4 p-4 sm:p-6">
                     <label className="block font-semibold">
                         Full Name
                         <input
@@ -104,14 +104,17 @@ export default function LearnDownload() {
                         safe. We only use it to track downloads and improve
                         resources.
                     </p>
-                    <div className="flex justify-end gap-3 pt-2">
+                    <div className="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end">
                         <Button
                             variant="outline"
+                            className="w-full sm:w-auto"
                             onClick={() => setSelectedFile(null)}
                         >
                             Cancel
                         </Button>
-                        <Button type="submit">Continue Download</Button>
+                        <Button type="submit" className="w-full sm:w-auto">
+                            Continue Download
+                        </Button>
                     </div>
                 </form>
             </Modal>

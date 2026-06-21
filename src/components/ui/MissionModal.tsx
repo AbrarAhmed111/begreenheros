@@ -75,41 +75,41 @@ export default function MissionModal({ mission, onClose }: MissionModalProps) {
         <Modal
             open={Boolean(mission)}
             labelledBy="mission-modal-title"
-            panelClassName="relative flex max-h-[90vh] max-w-3xl flex-col overflow-hidden rounded-mission bg-white shadow-modal"
+            panelClassName="relative flex max-h-[calc(100dvh-1.5rem)] max-w-3xl flex-col overflow-hidden rounded-mission bg-white shadow-modal sm:max-h-[90vh]"
         >
-            <div className="shrink-0 bg-dull-green p-6 text-white sm:p-8">
+            <div className="shrink-0 bg-dull-green p-5 text-white sm:p-8">
                 <button
                     type="button"
                     onClick={onClose}
-                    className="absolute right-4 top-4 rounded-full p-2 text-white hover:bg-white/15"
+                    className="absolute right-3 top-3 rounded-full p-2 text-white hover:bg-white/15 sm:right-4 sm:top-4"
                     aria-label="Close mission details"
                 >
                     <FaTimes />
                 </button>
-                <div className="flex items-center gap-4 pr-10">
+                <div className="flex flex-col items-center gap-3 pr-8 text-center sm:flex-row sm:items-center sm:gap-4 sm:pr-10 sm:text-left">
                     <img
                         src={activeMission.image}
                         alt=""
-                        className="h-16 w-16 rounded-full bg-white object-contain"
+                        className="h-14 w-14 shrink-0 rounded-full bg-white object-contain sm:h-16 sm:w-16"
                     />
                     <div>
                         <h2
                             id="mission-modal-title"
-                            className="text-2xl font-bold sm:text-3xl"
+                            className="text-xl font-bold sm:text-2xl md:text-3xl"
                         >
                             {activeMission.title}
                         </h2>
-                        <p className="italic text-white/80">
+                        <p className="text-sm italic text-white/80 sm:text-base">
                             {activeMission.intro}
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="min-h-0 flex-1 overflow-y-auto p-6 sm:p-10">
-                <p className="mb-4 text-sm font-bold uppercase tracking-wider text-green">
+            <div className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-10">
+                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-green sm:mb-4 sm:text-sm">
                     Step {step + 1} of {activeMission.steps.length}
                 </p>
-                <h3 className="mb-4 text-2xl font-bold text-dull-green">
+                <h3 className="mb-4 text-xl font-bold text-dull-green sm:text-2xl">
                     {current.title}
                 </h3>
                 <MissionStepContent
@@ -117,21 +117,26 @@ export default function MissionModal({ mission, onClose }: MissionModalProps) {
                     sections={current.sections}
                 />
             </div>
-            <div className="flex shrink-0 items-center justify-between border-t border-gray-200 px-6 py-5 sm:px-10 sm:py-6">
+            <div className="flex shrink-0 flex-col-reverse gap-3 border-t border-gray-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-6">
                 <Button
                     variant="outline"
-                    className={step === 0 ? "invisible" : ""}
+                    className={`w-full sm:w-auto ${step === 0 ? "invisible" : ""}`}
                     onClick={() => setStep((value) => value - 1)}
                 >
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center justify-center gap-2">
                         <FaArrowLeft /> Previous
                     </span>
                 </Button>
                 {isLast ? (
-                    <Button onClick={onClose}>Finish</Button>
+                    <Button className="w-full sm:w-auto" onClick={onClose}>
+                        Finish
+                    </Button>
                 ) : (
-                    <Button onClick={() => setStep((value) => value + 1)}>
-                        <span className="flex items-center gap-2">
+                    <Button
+                        className="w-full sm:w-auto"
+                        onClick={() => setStep((value) => value + 1)}
+                    >
+                        <span className="flex items-center justify-center gap-2">
                             Next <FaArrowRight />
                         </span>
                     </Button>

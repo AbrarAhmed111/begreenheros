@@ -110,27 +110,27 @@ function TypeStepHeader({ onClose }: { onClose: () => void }) {
             <button
                 type="button"
                 onClick={onClose}
-                className="absolute right-6 top-6 text-lg font-light text-gray-400 hover:text-gray-600"
+                className="absolute right-4 top-4 text-lg font-light text-gray-400 hover:text-gray-600 sm:right-6 sm:top-6"
                 aria-label="Close registration modal"
             >
                 <FaTimes />
             </button>
 
             <div className="text-center">
-                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-[#3498DB] to-[#27AE60]">
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#3498DB] to-[#27AE60] sm:h-14 sm:w-14">
                     <FaLeaf
-                        className="text-lg text-[#29cb9b]"
+                        className="text-base text-[#29cb9b] sm:text-lg"
                         aria-hidden="true"
                     />
                 </div>
                 <h2
                     id="itsc-register-title"
-                    className="text-[32px] font-bold italic leading-[1.35] text-[#3A86B7]"
+                    className="text-xl font-bold italic leading-snug text-[#3A86B7] sm:text-2xl md:text-[32px] md:leading-[1.35]"
                 >
                     Register for International Sustainability Marketing
                     Competition (ITSC)
                 </h2>
-                <p className="mt-1.5 text-[15px] text-[#777777]">
+                <p className="mt-1.5 text-sm text-[#777777] sm:text-[15px]">
                     Post-secondary division
                 </p>
             </div>
@@ -144,7 +144,7 @@ function ModalHeader({ onClose }: { onClose: () => void }) {
             <button
                 type="button"
                 onClick={onClose}
-                className="absolute right-5 top-5 text-xl text-gray-400 hover:text-gray-600"
+                className="absolute right-4 top-4 text-xl text-gray-400 hover:text-gray-600 sm:right-5 sm:top-5"
                 aria-label="Close registration modal"
             >
                 <FaTimes />
@@ -154,16 +154,16 @@ function ModalHeader({ onClose }: { onClose: () => void }) {
                 <img
                     src="/img/bgh-logo.jpeg"
                     alt="Be Green Heroes"
-                    className="mx-auto mb-5 h-[72px] w-[72px] rounded-full object-cover"
+                    className="mx-auto mb-4 h-14 w-14 rounded-full object-cover sm:mb-5 sm:h-[72px] sm:w-[72px]"
                 />
                 <h2
                     id="itsc-register-title"
-                    className="text-[22px] font-bold italic leading-snug text-blue"
+                    className="text-lg font-bold italic leading-snug text-blue sm:text-[22px]"
                 >
                     Register for International Sustainability Marketing
                     Competition (ITSC)
                 </h2>
-                <p className="mt-2 text-[20px] text-muted">
+                <p className="mt-2 text-base text-muted sm:text-[20px]">
                     Post-secondary division
                 </p>
             </div>
@@ -228,8 +228,8 @@ export default function ITSCRegisterModal() {
             labelledBy="itsc-register-title"
             panelClassName={`relative overflow-y-auto shadow-modal ${
                 step === "type"
-                    ? "max-w-[750px] rounded-[24px] bg-white px-8 pb-12 pt-12 sm:px-12"
-                    : "max-h-[92vh] max-w-4xl rounded-mission bg-white px-10 py-10"
+                    ? "max-w-[750px] rounded-[24px] bg-white px-5 pb-8 pt-8 sm:px-12 sm:pb-12 sm:pt-12"
+                    : "max-h-[calc(100dvh-1.5rem)] max-w-4xl rounded-mission bg-white px-5 py-6 sm:max-h-[92vh] sm:px-8 sm:py-8 lg:px-10 lg:py-10"
             }`}
         >
             {step === "type" ? (
@@ -239,12 +239,12 @@ export default function ITSCRegisterModal() {
             )}
 
             {step === "type" ? (
-                <div className="mt-10 text-center">
-                    <p className="mb-6 text-[28px] font-semibold text-[#333333]">
+                <div className="mt-6 text-center sm:mt-10">
+                    <p className="mb-5 text-xl font-semibold text-[#333333] sm:mb-6 sm:text-2xl md:text-[28px]">
                         Select Registration Type
                     </p>
 
-                    <div className="mb-12 flex items-center justify-center gap-16 sm:gap-24">
+                    <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:mb-12 sm:flex-row sm:gap-16 md:gap-24">
                         {(["individual", "team"] as const).map((type) => (
                             <label
                                 key={type}
@@ -258,7 +258,7 @@ export default function ITSCRegisterModal() {
                                     onChange={() => setEntryType(type)}
                                     className="h-[18px] w-[18px] accent-[#3A86B7]"
                                 />
-                                <span className="text-[20px] font-normal text-[#333333]">
+                                <span className="text-base font-normal text-[#333333] sm:text-[20px]">
                                     {type}
                                 </span>
                             </label>
@@ -268,7 +268,7 @@ export default function ITSCRegisterModal() {
                     <button
                         type="button"
                         onClick={() => setStep("form")}
-                        className="min-w-[110px] rounded-pill bg-gradient-to-r from-[#3498DB] to-[#27AE60] px-12 py-3.5 text-[20px]  text-white shadow-sm transition hover:scale-105"
+                        className="min-w-[110px] rounded-pill bg-gradient-to-r from-[#3498DB] to-[#27AE60] px-8 py-3 text-base text-white shadow-sm transition hover:scale-105 sm:px-12 sm:py-3.5 sm:text-[20px]"
                     >
                         Continue
                     </button>
@@ -326,11 +326,11 @@ export default function ITSCRegisterModal() {
 
                     <input type="hidden" name="type" value={entryType} />
 
-                    <div className="mt-8 flex flex-col-reverse items-center justify-between gap-3 border-t border-gray-200 pt-5 sm:flex-row">
+                    <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-gray-200 pt-5 sm:mt-8 sm:flex-row sm:items-center">
                         <button
                             type="button"
                             onClick={() => setStep("type")}
-                            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-semibold text-body transition hover:bg-gray-50"
+                            className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-semibold text-body transition hover:bg-gray-50"
                         >
                             <FaArrowLeft aria-hidden="true" />
                             Previous
@@ -338,7 +338,7 @@ export default function ITSCRegisterModal() {
 
                         <button
                             type="submit"
-                            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-gradient-blue to-gradient-green px-8 py-2.5 font-bold text-white shadow-md transition hover:scale-105"
+                            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-gradient-blue to-gradient-green px-8 py-2.5 font-bold text-white shadow-md transition hover:scale-105"
                         >
                             <FaPaperPlane aria-hidden="true" />
                             Register

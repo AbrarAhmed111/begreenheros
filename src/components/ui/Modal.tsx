@@ -44,7 +44,7 @@ export function Modal({
 
     return (
         <div
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-black/65 p-4 motion-reduce:animate-none ${
+            className={`fixed inset-0 z-50 overflow-y-auto bg-black/65 motion-reduce:animate-none ${
                 closing
                     ? "animate-modal-backdrop-out"
                     : "animate-modal-backdrop"
@@ -54,12 +54,16 @@ export function Modal({
             aria-labelledby={labelledBy}
             aria-describedby={describedBy}
         >
-            <div
-                className={`w-full motion-reduce:animate-none ${
-                    closing ? "animate-modal-float-out" : "animate-modal-float"
-                } ${panelClassName}`}
-            >
-                {children}
+            <div className="flex min-h-full items-center justify-center p-3 sm:p-4">
+                <div
+                    className={`my-auto w-full min-h-0 motion-reduce:animate-none ${
+                        closing
+                            ? "animate-modal-float-out"
+                            : "animate-modal-float"
+                    } ${panelClassName}`}
+                >
+                    {children}
+                </div>
             </div>
         </div>
     );
