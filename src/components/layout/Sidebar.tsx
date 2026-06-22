@@ -34,7 +34,7 @@ export default function Sidebar({ isOpen, onNavigate }: SidebarProps) {
             }`}
         >
             <nav className="px-5 py-[30px]" aria-label="Primary navigation">
-                <ul className="flex flex-col gap-3">
+                <ul className="flex flex-col gap-4">
                     {links.map((link) => {
                         const { to, label, icon: Icon } = link;
                         const end = "end" in link ? link.end : undefined;

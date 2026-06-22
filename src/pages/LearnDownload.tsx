@@ -7,15 +7,54 @@ import { Quote } from "../components/ui/Quote";
 import { languageDocuments } from "../utils/content";
 
 export default function LearnDownload() {
+    const displayLanguage = (lang: string) => {
+        if (lang === "French") return "French (Français)";
+        if (lang === "Spanish") return "Spanish (Español)";
+        if (lang === "Italian") return "Italian (Italiano)";
+        if (lang === "Korean") return "Korean (한국어)";
+        if (lang === "Arabic") return "Arabic (عربي)";
+        if (lang === "Chinese") return "Chinese (中文)";
+        return lang;
+    };
+
     const [selectedFile, setSelectedFile] = useState<string | null>(null);
+    const [confirmed, setConfirmed] = useState<boolean>(() => {
+        try {
+            return localStorage.getItem("bgh_download_confirmed") === "true";
+        } catch (e) {
+            return false;
+        }
+    });
+
+    const doDownload = (fileName: string) => {
+        const link = document.createElement("a");
+        link.href = `/pdf/BGH/${fileName}`;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    };
 
     const submit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.info(
-            "Static chapter download form submitted",
-            new FormData(event.currentTarget)
-        );
-        if (selectedFile) window.location.href = `/pdf/BGH/${selectedFile}`;
+        const form = new FormData(event.currentTarget);
+        console.info("Static chapter download form submitted", form);
+
+        // save confirmation and user info to localStorage so modal is skipped next time
+        try {
+            const name = String(form.get("name") || "");
+            const email = String(form.get("email") || "");
+            localStorage.setItem("bgh_download_confirmed", "true");
+            localStorage.setItem("bgh_download_user", JSON.stringify({ name, email, time: Date.now() }));
+            setConfirmed(true);
+        } catch (e) {
+            console.warn("Could not write download confirmation to localStorage", e);
+        }
+
+        if (selectedFile) {
+            doDownload(selectedFile);
+        }
+
         setSelectedFile(null);
     };
 
@@ -34,15 +73,21 @@ export default function LearnDownload() {
                         key={language}
                         className="rounded-lg border border-gray-200 bg-white p-4 text-center transition hover:-translate-y-1 hover:shadow-lg"
                     >
-                        <h3 className="mb-3 text-2xl font-bold">{language}</h3>
+                        <h3 className="mb-3 text-[30px] font-bold">{displayLanguage(language)}</h3>
                         <img
                             src={`/img/Learn/${image}`}
                             alt={`${language} Chapter I book cover`}
-                            className="h-[500px] w-full rounded object-cover"
+                            className="max-h-[500px] w-full rounded object-contain"
                         />
                         <button
                             type="button"
-                            onClick={() => setSelectedFile(file)}
+                            onClick={() => {
+                                if (confirmed) {
+                                    doDownload(file);
+                                } else {
+                                    setSelectedFile(file);
+                                }
+                            }}
                             className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-dull-green p-3 font-semibold text-white transition hover:bg-hover-green"
                         >
                             <FaDownload /> Download PDF
@@ -59,7 +104,6 @@ export default function LearnDownload() {
             >
                 Previous
             </Link>
-
             <Modal
                 open={Boolean(selectedFile)}
                 labelledBy="download-title"
